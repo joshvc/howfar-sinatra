@@ -1,0 +1,19 @@
+<h2>Driving Distance From <%= @segments.first.origin %></h2>
+<table>
+<% @segments.each do |segment| %>
+  <% unless segment.distance == "1 ft" %>
+    <tr>
+      <td>
+        <a href=<%= segment.map_link %>, target="_blank">
+          <%= segment.destination %>
+        </a>
+      </td>
+      <td>
+        <%= segment.distance %>
+      </td>
+      <td>
+        <%= segment.drive_time %>
+      </td>
+    </tr>
+  <% end %>
+<% end %>
